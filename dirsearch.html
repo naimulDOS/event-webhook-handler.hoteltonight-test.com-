@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Dirsearch Tool - বাংলা নোটস (Advanced to Pro)</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f2f2f2; color: #1a1a1a; padding: 20px; }
+    h1, h2 { color: #2c3e50; }
+    code { background: #eef; padding: 4px 6px; border-radius: 4px; }
+    .command { background: #e3f2fd; padding: 10px; border-left: 4px solid #1976d2; margin: 10px 0; }
+    .explanation { margin-bottom: 20px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<h1>📂 Dirsearch Tool - বাংলা নোটস (Advanced to Pro)</h1>
+<p><strong>dirsearch</strong> হল একটি directory brute-forcing টুল যা ওয়েব সার্ভার থেকে hidden directory এবং ফাইল খুঁজে বের করতে ব্যবহৃত হয়।</p>
+
+<h2>🔧 ইন্সটলেশন:</h2>
+<div class="command">
+  <code>git clone https://github.com/maurosoria/dirsearch.git</code><br>
+  <code>cd dirsearch</code><br>
+  <code>python3 dirsearch.py -h</code>
+</div>
+
+<h2>🔰 Basic Command:</h2>
+<div class="command">
+  <code>python3 dirsearch.py -u https://example.com -e php,html,txt</code>
+</div>
+<div class="explanation">
+  🔹 <code>-u</code>: কোন URL স্ক্যান করবে <br>
+  🔹 <code>-e</code>: কোন extension খুঁজবে, যেমন .php, .html, .txt ইত্যাদি
+</div>
+
+<h2>⚙️ Advanced Command:</h2>
+<div class="command">
+  <code>python3 dirsearch.py -u https://example.com -e php -x 403,404 -t 20 --random-agents</code>
+</div>
+<div class="explanation">
+  🔹 <code>-x 403,404</code>: এই status code পেলে সেগুলো ignore করবে <br>
+  🔹 <code>-t 20</code>: একসাথে ২০টি thread চালাবে, স্ক্যান দ্রুত হবে <br>
+  🔹 <code>--random-agents</code>: প্রতি রিকুয়েস্টে random user-agent পাঠাবে (bot detect এ সহায়তা করে)
+</div>
+
+<h2>🚀 Pro Level Command:</h2>
+<div class="command">
+  <code>python3 dirsearch.py -u https://example.com -e php,html -w /usr/share/wordlists/dirb/common.txt -t 30 --full-url --simple-report report.txt</code>
+</div>
+<div class="explanation">
+  🔹 <code>-w</code>: custom wordlist ব্যবহার করবে <br>
+  🔹 <code>--full-url</code>: রিপোর্টে full URL সহ দেখাবে <br>
+  🔹 <code>--simple-report</code>: সহজ ও ক্লিন রিপোর্ট বানাবে
+</div>
+
+<h2>📌 দরকারি আরও কিছু Flags:</h2>
+<ul>
+  <li><code>--timeout 10</code>: প্রতিটি রিকুয়েস্টে ১০ সেকেন্ডের মধ্যে উত্তর না পেলে স্কিপ করবে</li>
+  <li><code>--recursive</code>: পাওয়া ডিরেক্টরির ভিতরে আবার স্ক্যান চালাবে</li>
+  <li><code>--auto-tuning</code>: অটোমেটিক thread adjust করবে</li>
+</ul>
+
+<h2>📝 রিপোর্ট আউটপুট:</h2>
+<ul>
+  <li>📁 Simple .txt রিপোর্ট</li>
+  <li>📄 JSON, CSV, HTML ফরম্যাটেও সাপোর্ট করে</li>
+</ul>
+
+<h2>📚 Combo Use Case:</h2>
+<div class="command">
+  <code>subfinder -d example.com -o urls.txt && cat urls.txt | while read url; do python3 dirsearch.py -u $url -e php; done</code>
+</div>
+<div class="explanation">
+  🔹 Subfinder দিয়ে URL সংগ্রহ করো <br>
+  🔹 প্রতিটি URL এর জন্য dirsearch চালাও
+</div>
+
+<p style="margin-top: 30px;">✍️ <i>তৈরি করেছেন: তোমার প্রিয় GPT ভাই – সহজ বাংলায় বুঝে শিখো ❤️</i></p>
+
+</body>
+</html>
